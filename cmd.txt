@@ -1,0 +1,7 @@
+cd /home/xwu/windows/workstation/xpc
+
+matlab ./ -nosplash -nodesktop
+matlab ./ -nosplash -nodesktop -r 'HFtest'
+
+load('/HPS/rtface/work/part_scan/uw_data/object_collection/output/cws.mat', '-mat');
+save(sprintf('%s/cws.mat', uw_obj.out_root), '-mat', '-append', 'uw_obj', 'opts');

@@ -1,0 +1,13 @@
+function [desc, frames] = compute(obj, im, step)
+
+if nargin < 3, step = obj.step; end
+
+[frames, desc] = vl_phow(im, 'Verbose', obj.verbose, ...
+    'Sizes',obj.sizes, 'Fast',obj.fast, 'step',step, ...
+    'Color',obj.color, 'ContrastThreshold',obj.contrast_threshold, ...
+    'WindowSize',obj.window_size, 'Magnif',obj.magnif, ...
+    'FloatDescriptors',obj.float_descriptors);
+desc = single(desc);
+frames = single(frames);
+
+end
